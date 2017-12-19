@@ -15,6 +15,12 @@ import se.itu.systemet.domain.Product;
  */
 public class ProductLineFactory {
 
+  private static final ProductLine SQL_PRODUCT_LINE = 
+    new SQLBasedProductLine();
+  
+  private static final ProductLine FAKE_PRODUCT_LINE = 
+    new FakeProductLine();
+  
   /**
    * Prevent instantiation.
    */
@@ -27,10 +33,12 @@ public class ProductLineFactory {
    * @return A new ProductLine object
    */
   public static ProductLine getProductLine() {
+    //System.out.println("ProductLine: " + System.getProperty("ProductLine"));
     if ("DB".equals(System.getProperty("ProductLine"))) {
-      return new SQLBasedProductLine();
+      return SQL_PRODUCT_LINE;
     } else {
-      return new FakeProductLine(); // A product line with hard-coded products
+      return FAKE_PRODUCT_LINE; // A product line with hard-coded products
     }
+    //return new XMLBasedProductLine();
   }
 }
