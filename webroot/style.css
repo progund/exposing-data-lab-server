@@ -1,0 +1,8 @@
+@charset "UTF-8";/*!* Source in style.css */
+html{color:#000;background:#FFF;}
+h1{font-size:131%;font-weight:bold;font-style:normal;color:#025a9a;}
+h2{font-size:125%;font-weight:bold;font-style:normal;color:#036;}
+h3{font-size:113%;font-weight:normal;font-style:normal;color:#025a9a;}
+body{font-family:sans-serif;}
+table,td{border: 1px solid;}
+/* This style is mostly stolen from https://www.w3.org/2008/site/css/minimum */

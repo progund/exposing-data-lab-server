@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search for products</title>
+    <style>
+      label {        
+      text-align: right;
+      width: 100px;
+      float: left;      
+      }
+      input {
+        align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <form method="GET" action="search/products/all">
+      <label for="min_price">Min price:</label><input type="text" name="min_price" id="min_price"><br/>
+      <label for="max_price">Max price:</label><input type="text" name="max_price" id="max_price"><br/>
+      <label for="min_alcohol">Min alcohol:</label><input type="text" name="min_alcohol" id="min_alcohol"><br/>
+      <label for="max_alcohol">Max alcohol:</label><input type="text" name="max_alcohol" id="max_alcohol"><br/>
+      <input type="submit" value="Search"/>
+    </form>
+  </body>
+</html>
