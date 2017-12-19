@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="iso-8859-1"/>
+  <title>Systembolaget web API</title>
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <h1>An API for the Systembolaget product line</h1>
+    <p>
+This is the web API for accessing Systembolaget's product line. You can use it to retrieve JSON encoded data about the products in Systembolaget's product line, and the API allows you to filter your request in various ways.
+    </p>
+    <h2>Methods</h2>
+    <h3>Retrieving all students</h3>
+    <p>
+URL: <code>/search/products/all</code>
+    </p>
+    <p>
+If you don't give any GET parameters, the above URL will give you a JSON with all products.
+    </p>
+    <p>
+    <table>
+      <tr><th>Parameter</th><th>Value</th></tr>
+      <tr><td>min_price</td><td>A number, e.g. 50 or 50.5</td></tr>
+      <tr><td>max_price</td><td>A number, e.g. 50 or 50.5</td></tr>
+      <tr><td>min_alcohol</td><td>A number between 0 and 100</td></tr>
+      <tr><td>max_alcohol</td><td>A number between 0 and 100</td></tr>
+    </table>
+    </p>
+    <p>Example:<br/>
+URL: <code>/search/products/all?min_alcohol=50&max_price=270&name=Guinness&max_alcohol=60</code>
+    </p>
+    <p>
+Response (example):<br />
+<pre>
+[
+  {
+  "name": "Bols Gold Strike",
+  "price": 239.00,
+  "volume": 500,
+  "alcohol": 50.00,
+  "nr": 74502,
+  "product_group": "Likör"
+  },
+  {
+  "name": "Chartreuse Grön",
+  "price": 269.00,
+  "volume": 350,
+  "alcohol": 55.00,
+  "nr": 60602,
+  "product_group": "Likör"
+  }
+]
+</pre>
+    </p>
+    <h2>Status codes</h2>
+    <p>
+  In the current version of this API (1.0), the only implemented staus code is 200 OK.
+  In future versions, we'll add more status codes to match what it going on at the server side,
+  e.g. "404 Not found" if the server can't find data matching the parameters, 400 Bad request if the server can't understand the parameters. This will also, in the future, be accompanied with a JSON containing a more detailed error message.
+    </p>
+    <p>
+      <ul>
+        <li>Everything OK: <code>200 OK</code></li>
+      </ul>
+  Future improvements (<strong>Not yet implemented</strong>):
+      <ul>
+        <li>Bad request (e.g. missing required parameter): <code>400 Bad request</code>(not yet implemented)</li>
+        <li>Data could not be found: <code>404 Not found</code>(not yet implemented)</li>
+      </ul>
+    </p>
+    <h2>HTTP headers</h2>
+    <p>
+      <ul>
+        <li>Everything OK:<br />
+<pre>
+200 OK
+Connection: Keep-Alive
+Date: Fri, 01 Dec 2017 08:54:43 GMT
+Server: Winstone Servlet Engine v0.9.10
+Content-Length: 308
+Content-Type: application/json;charset=UTF-8
+Client-Date: Fri, 01 Dec 2017 08:54:43 GMT
+Client-Peer: 127.0.0.1:8080
+Client-Response-Num: 1
+X-Powered-By: Servlet/2.5 (Winstone/0.9.10)
+</pre>
+        </li>
+        <li>Bad request: (Not yet implemented)<br />
+<pre>
+400 Bad Request
+Connection: Keep-Alive
+Date: Fri, 08 Apr 2016 11:28:56 GMT
+Server: Winstone Servlet Engine v0.9.10
+Content-Length: 60
+Content-Type: application/json
+Client-Date: Fri, 08 Apr 2016 11:28:56 GMT
+Client-Peer: 129.16.213.178:8080
+Client-Response-Num: 1
+X-Powered-By: Servlet/2.5 (Winstone/0.9.10)
+</pre>
+        </li>
+        <li>Data could not be found (Not yet implemented):<br />
+<pre>
+404 Not Found
+Connection: Keep-Alive
+Date: Fri, 08 Apr 2016 11:37:11 GMT
+Server: Winstone Servlet Engine v0.9.10
+Content-Length: 50
+Content-Type: application/json
+Client-Date: Fri, 08 Apr 2016 11:37:11 GMT
+Client-Peer: 129.16.213.178:8080
+Client-Response-Num: 1
+X-Powered-By: Servlet/2.5 (Winstone/0.9.10)
+</pre>
+        </li>
+      </ul>
+    </p>
+    <h2>Error responses</h2>
+    <p>
+Here are some examples of error responses from the API.
+    </p>
+    <h3>No data found</h3>
+    <p>
+In the current version, bad parameters or missing data both result in a JSON result of an empty array:
+<pre>
+[]
+</pre>
+    </p>
+    <h3>Bad request (e.g. missing id parameter)</h3>
+    <p>
+In the current version, bad parameters or missing data both result in a JSON result of an empty array:
+<pre>
+[]
+</pre>
+    </p>
+  </body>
+</html>
