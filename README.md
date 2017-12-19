@@ -1,6 +1,6 @@
 # exposing-data-lab-server
 
-This is code students can, actuallt should, use to get started with the lab.
+This is code students can, actually should, use to get started with the lab.
 
 
 # Description
