@@ -1,4 +1,4 @@
 #!/bin/bash
 
-find . -name '*~' | xargs -r rm
-find . -name '*.class' | xargs -r rm
+find . -name '*~' | xargs rm -f
+find . -name '*.class' | xargs rm -f
