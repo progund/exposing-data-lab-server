@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Search for products in the Systemet API</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
@@ -11,32 +11,28 @@
         margin-right: 2%;
       }
       input {
-        align: right;
+        text-align: right;
       }
     </style>
   </head>
   <body>
     <h1>Search for products in the Systemet API</h1>
     <form method="GET" action="http://localhost:8080/search/products/all">
-      <label for="min_price">Min price:</label><input type="text" name="min_price" id="min_price"><br/>
-      <label for="max_price">Max price:</label><input type="text" name="max_price" id="max_price"><br/>
-      <label for="min_alcohol">Min alcohol:</label><input type="text" name="min_alcohol" id="min_alcohol"><br/>
-      <label for="max_alcohol">Max alcohol:</label><input type="text" name="max_alcohol" id="max_alcohol"><br/>
-      <input type="submit" value="Search"/>
+      <label for="min_price">Min price:</label><input type="text" name="min_price" id="min_price" /><br/>
+      <label for="max_price">Max price:</label><input type="text" name="max_price" id="max_price" /><br/>
+      <label for="min_alcohol">Min alcohol:</label><input type="text" name="min_alcohol" id="min_alcohol" /><br/>
+      <label for="max_alcohol">Max alcohol:</label><input type="text" name="max_alcohol" id="max_alcohol" /><br/>
+      <input type="submit" value="Search"/><br/>
     </form>
     <h1>Search Adlibris for books</h1>
-    <p>
       <form method="GET" action="https://www.adlibris.com/se/sok">
-        <label for="q">Search for book:</label><input type="text" name="q" id="q">
-      <input type="submit" value="Search"/>
+        <label for="q">Search for book:</label><input type="text" name="q" id="q" />
+        <input type="submit" value="Search" /><br/>
       </form>
-    </p>
     <h1>Search Juneday Wiki for something</h1>
-    <p>
       <form method="GET" action="http://wiki.juneday.se/mediawiki/index.php">
-        <label for="search">Search wiki:</label><input type="text" name="search" id="search">
-      <input type="submit" value="Search"/>
+        <label for="search">Search wiki:</label><input type="text" name="search" id="search" />
+        <input type="submit" value="Search"/>
       </form>
-    </p>
   </body>
 </html>
