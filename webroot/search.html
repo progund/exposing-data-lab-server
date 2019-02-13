@@ -13,6 +13,9 @@
       input {
         text-align: right;
       }
+      br {
+        clear: both;
+      }
     </style>
   </head>
   <body>
@@ -32,7 +35,7 @@
     <h1>Search Juneday Wiki for something</h1>
       <form method="GET" action="http://wiki.juneday.se/mediawiki/index.php">
         <label for="search">Search wiki:</label><input type="text" name="search" id="search" />
-        <input type="submit" value="Search"/>
+        <input type="submit" value="Search"/><br/>
       </form>
   </body>
 </html>
